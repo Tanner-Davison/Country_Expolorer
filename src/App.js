@@ -4,16 +4,16 @@ import MainDisplay from "./Components/MainDisplay";
 import OptionDisplay from "./Components/OptionDisplay";
 import { selectedPotentials } from "./redux/slices/potentialCountriesSlices";
 import {  useSelector } from "react-redux";
-
+import { selectDisplay } from "./redux/slices/displayCountrySlice";
 
 function App() {
     let potentials = useSelector(selectedPotentials)
-    console.log(potentials)
+    const currentDisplay = useSelector(selectDisplay)
+    console.log("DISPLAY", currentDisplay);
     return (
         <div className="App font-link">
             <Header />
-            <MainDisplay/>
-            <OptionDisplay />
+           {currentDisplay ? <MainDisplay/> : <OptionDisplay />}
         </div>
     );
 }

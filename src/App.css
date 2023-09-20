@@ -172,3 +172,68 @@ td {
     height: 3vw;
     animation: spin 0.8s linear infinite;
 }
+.countryInfo{
+    display:flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
+}
+.flagBorder{
+    display:flex;
+    height: 115px;
+    width: 205px;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    animation: fadeIn 5s;
+    transition: height 1.5s, width 1.5s;
+    
+}
+.flagBorder:hover{
+    box-shadow: 0px 0px 25px white;
+    height:250px;
+    width: 500px;
+    z-index:100 ;
+    
+}
+.flags{
+    border-radius: 8px;
+     height: 100px;
+     animation: fadeIn 5s;
+     transition: height 1s;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.flags:hover{
+     height:200px;
+     
+}
+.maps{
+    border: 10px solid black;
+    transition: height 2s, width 2s;
+}
+.maps:hover{
+    width:500px;
+	height:500px;
+}
+.langTrans {
+    position: absolute;
+    display: flex;
+    left: 100px;
+    flex-direction: column;
+    height: 400px;
+    width: 300px;
+    overflow-y: auto;  /* This makes it scrollable on overflow */
+    top: 300px;
+    border-radius: 50px;
+    background-color: black;
+    transition: width 1s, overflow-x 2s;
+}
+.langTrans:hover{
+ width: 500px;
+}
