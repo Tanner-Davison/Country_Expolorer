@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux";
 import { selectDisplay } from "../redux/slices/displayCountrySlice";
-
+const apiKey = process.env.REACT_APP_MY_KEY;
 const Overview = () => {
+
 	const currentDisplay = useSelector(selectDisplay);
-    const mapsPlace = currentDisplay.name.official;
+	const mapsPlace = currentDisplay.name.official;
+	console.log("api KEY", apiKey);
 	return (
 		<div className='stack'>
 			<h1>{currentDisplay.name.official}</h1>
@@ -29,7 +31,7 @@ const Overview = () => {
 					/>
 				)}
 			</div>
-			
+
 			<div className={"countryInfo"}>
 				<h2
 					style={{
@@ -38,8 +40,8 @@ const Overview = () => {
 						alignItems: "center",
 						gap: 15,
 					}}>
-					{" "}
-					Current Population: <p>{currentDisplay.population}</p>{" "}
+					Current Population:
+					<p>{currentDisplay.population}</p>
 				</h2>
 				<br></br>
 			</div>
@@ -52,7 +54,7 @@ const Overview = () => {
 					style={{ borderRadius: 30 }}
 					loading='lazy'
 					allowFullScreen
-					src={`https://www.google.com/maps/embed/v1/place?q=${mapsPlace}&key=AIzaSyBhxkhETAxu0qYJa-gCTo_uPu1PL7LcFj8`}></iframe>
+					src={`https://www.google.com/maps/embed/v1/place?q=${mapsPlace}&key=${apiKey}`}></iframe>
 			</div>
 		</div>
 	);
