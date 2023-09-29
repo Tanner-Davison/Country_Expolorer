@@ -4,7 +4,8 @@ import Weather from './Weather';
 import Symbol from "./Symbol";
 
 const MainDisplay = () => {
-    const [view, setView] = useState("Overview");
+	const [view, setView] = useState("Overview");
+	
     return (
 			<div className='stack'>
 				<div className='tab-select'>
@@ -16,7 +17,7 @@ const MainDisplay = () => {
 				</div>
 				{view === "Overview" && <Overview />}
 				{view === "Weather" && <Weather />}
-				{view === "Symbol" && <Symbol />}
+				{view === "Symbols" && <Symbol />}
 			</div>
 		);
 };

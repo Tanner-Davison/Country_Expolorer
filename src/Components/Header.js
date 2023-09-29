@@ -16,7 +16,7 @@ const Header = () => {
                     style={{ marginRight: "10px" }}
                     fontSize="1.6em"
                 />
-                <h3 className="home-country">{currentDisplay && currentDisplay.name.common}</h3>
+                <h3 className="home-country">{currentDisplay ? currentDisplay.name.common : 'Search For A Country..'}</h3>
             </div>
             <div className="country-input">
                 <input

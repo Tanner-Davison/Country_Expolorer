@@ -6,6 +6,10 @@ const Overview = () => {
 	const currentDisplay = useSelector(selectDisplay);
 	const mapsPlace = currentDisplay.name.official;
 	console.log("api KEY", apiKey);
+	
+
+	
+
 	return (
 		<div className='stack'>
 			<h1>{currentDisplay.name.official}</h1>
@@ -26,7 +30,7 @@ const Overview = () => {
 				) : (
 					<img
 						className='flags'
-						src={currentDisplay.flags.png}
+							src={currentDisplay.flags.png}
 						alt='flag'
 					/>
 				)}
